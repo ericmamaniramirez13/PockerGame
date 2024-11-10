@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poker Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Poker Game</h1>
+        
+        <div class="hand">
+            <h2>Your Hand</h2>
+            <div id="cards">
+                <!-- Cards will be dynamically rendered here -->
+                {% for card in hand %}
+                    <div class="card">{{ card }}</div>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button onclick="bet()">Bet</button>
+            <button onclick="fold()">Fold</button>
+            <button onclick="draw()">Draw</button>
+        </div>
+    </div>
+    
+    <script src="/static/game.js"></script>
+</body>
+</html>
